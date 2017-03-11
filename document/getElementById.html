@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<h1 id="change-id"> Change here </h1>
+	<button id="button-id" type="button" onclick=buttonHandler()> click </button>
+	<img id="img-id" onclick=imgHandler() src="eg_bulboff.gif"> 
+	<input id="input-id" type="text">
+	<button type="button" onclick=isNumCheck()> check </button>
+	<script>
+	function buttonHandler () {
+		var h1 = document.getElementById('change-id')
+		h1.innerHTML = "Here change"
+
+		var button = document.getElementById('button-id')
+		if (button.innerHTML == "click") {
+		  	button.innerHTML = "CLICK"
+			button.style.color = "#ff0000"
+		} else {
+			button.innerHTML = "click"
+			button.style.color = "#00ff00"
+		}
+	}
+
+	function imgHandler () {
+		var image = document.getElementById('img-id')
+		if (image.src.match("eg_bulboff")) {
+			image.src = "eg_bulbon.gif"
+		} else {
+			image.src = "eg_bulboff.gif"
+		}
+	}
+
+	function isNumCheck () {
+		var value = document.getElementById('input-id').value
+		if (value == "" || isNaN(value)) {
+			alert("Not a numeric")
+		}
+	}
+       	</script>
+	</body>
+</html>
